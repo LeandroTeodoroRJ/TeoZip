@@ -1,0 +1,23 @@
+*******************************************************************
+                              TEOZIP
+*******************************************************************
+
+Programming Language:	Shell Script
+Compile Version:	GNU bash, version 4.3.30 
+Code Editor: GNU nano
+Homepage:	https://github.com/LeandroTeodoroRJ/TeoZip.git	
+Program Version: 1.0
+Maintainer:	leandroteodoro.rj@hotmal.com 	
+Depends: tar 
+Architecture:	all Linux  				
+Readme:	NOT
+Links:	NOT
+Files:	teozip: script file
+		Install.sh: instalation script
+        Remove.sh: unstall script
+Description:	Script para facilitar o uso do comando $tar	
+
+**************************** INFO *********************************
+30/12/2019: Post
+
+
