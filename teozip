@@ -1,0 +1,47 @@
+#**********************************************************************
+#       TEOZIP - SISTEMA SIMPLES DE COMPRESSÃO DE ARQUIVOS
+#**********************************************************************
+#!/bin/bash
+
+#OBJETIVO: Facilitar o uso do comando $tar para que não seja necessário
+#decorar as opções em formato de letras ou acessar o help. O script 
+#contempla os usos mais comuns.
+
+#EXEMPLO DE UTILIZAÇÃO:
+#Compacta todos os arquivos da pasta atual
+#	$teozip create all MeuArquivo.tar.gz
+
+#Compacta os arquivos selecionados
+#	$teozip create select <nome_arquivo.tar.gz> <arquivos>
+#	$teozip create select MeuArquivo.tar.gz ~/MinhaPasta/
+
+#Extrai os arquivos compactados
+#	$teozip extract MeuArquivo.tar.gz
+
+#**************************** MAIN CODE ********************************
+
+if [ "$1" = "extract" ]
+then
+	tar xzfv $2         #Descompacta o conteúdo do arquivo
+	exit 0
+fi
+
+if [ "$1" = "create" ]
+then
+	if [ "$2" = "all" ]
+	then
+		tar czfv $3 *      #Compacta todos os arquivos do diretório atual
+		exit 0
+	fi
+
+	if [ "$2" = "select" ]
+	then
+		tar czfv $3 $4      #Agrupa já compactando
+		exit 0
+	fi
+
+fi
+
+echo "Opção não válida."
+exit 1
+
